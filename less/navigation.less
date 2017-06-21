@@ -1,0 +1,264 @@
+// --------------------------------
+// Template: CSS > Navigation
+// --------------------------------
+
+
+// Navigation Toggle
+// --------------------------------
+
+
+.navigation-toggle {
+	display: none;
+}
+
+.nav-toggle {
+	position: relative;
+	z-index: 10;
+	display: none;
+	min-width: auto;
+	padding: 10px;
+	.gradient(fade(@color__primary, 30%), fade(@color__primary, 30%));
+	border: 2px solid fade(@color__navigation--text, 20%);
+	border-radius: 4px;
+	color: @color__navigation--text;
+	line-height: 100%;
+	box-shadow: 0 9px 10px rgba(0,0,0,0.1);
+
+	@media @tablet {
+		display: flex;
+		align-items: center;
+	}
+	@media @mobile {
+		padding: 16px 12px;
+	}
+
+	&:focus {
+		background-color: transparent;
+	}
+}
+
+// Custom Toggle
+.nav-toggle-icon {
+	position: relative;
+	z-index: 5;
+	display: none;
+	width: 20px;
+	height: 2px;
+	margin-right: 10px;
+	padding: 0;
+	border-radius: 0;
+	background-color: @color__navigation--text;
+	line-height: 100%;
+
+	@media @tablet {
+		display: inline-block;
+	}
+	@media @mobile {
+		margin-right: 0;
+	}
+
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		left: 0;
+		display: inline-block;
+		width: 100%;
+		height: 2px;
+		background-color: @color__navigation--text;
+		background-clip: content-box;
+	}
+	&:before {
+		top: -6px;
+	}
+	&:after {
+		bottom: -6px;
+	}
+}
+
+.nav-toggle-text {
+	position: relative;
+	top: 1px;
+	display: none;
+
+	@media @tablet {
+		display: inline-block;
+	}
+	@media @mobile {
+		display: none;
+	}
+}
+
+
+
+
+// Navigation List
+// --------------------------------
+
+
+.navigation-list:not(.navigation-list--children) {
+	margin: 0;
+
+	@media @tablet {
+		display: none;
+		position: fixed;
+		z-index: 5;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		background-color: @color__feature-content--background;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		overflow-y: auto;
+	}
+
+	&.open {
+		display: flex;
+	}
+}
+
+
+// Dropdown Menu
+// -------------
+
+.folder-toggle {
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		top: 18px;
+		right: 0;
+		display: block;
+		width: 8px;
+		height: 1px; 
+		background-color: @color__navigation--text;
+
+		@media @tablet {
+			top: 24px;
+			right: -10px;
+			width: 10px;
+			height: 2px;
+		}
+	}
+	&:before {
+		transform: rotate(45deg) translateX(-23%);
+  		transform-origin: top left;
+	}
+	&:after {
+		transform: rotate(-45deg) translateX(23%);
+  		transform-origin: top right;
+
+  		@media @tablet {
+			right: -9px;
+		}
+	}
+
+	&:hover {
+		opacity: 1;
+	}
+
+}
+
+.navigation-item:hover {
+	.navigation-list--children {
+		min-width: 130px;
+		padding: 10px;
+		background-color: fade(@color__primary, 50%);
+		border: 2px solid fade(@color__navigation--text, 20%);
+		border-radius: 4px;
+		text-align: center;
+		color: @color__navigation--text;
+
+		@media @tablet {
+			position: relative;
+			padding: 10px 60px;
+		}
+
+		.navigation-item .item-name {
+			padding: 0;
+		}
+	}
+}
+
+
+
+
+// Navigation Item
+// --------------------------------
+
+
+.navigation-item {
+	@media @tablet {
+		margin-bottom: 30px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.item-name {
+		padding: 2px 20px;
+		opacity: .7;
+
+		@media @tablet {
+	        font-size: bkscale(@font__navigation--font-size, 1.4);
+	        line-height: bkscale(@font__navigation--line-height, 1.4);
+	    }
+	    @media @mobile {
+	        font-size: bkscale(@font__navigation--font-size, 1.2);
+	        line-height: bkscale(@font__navigation--line-height, 1.2);
+	    }
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	&.selected .item-name {
+		opacity: 1;
+	}
+	&:last-child .item-name {
+		padding-right: 0;
+	}
+}
+
+// Selected
+.navigation-item.selected {
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		width: 1px;
+		height: 14px;
+		margin: 0 auto;
+		background-color: @color__navigation--text;
+		opacity: .6;
+
+		@media @tablet {
+			width: 40px;
+			height: 1px;
+		}
+	}
+	&:before {
+		top: -14px;
+
+		@media @tablet {
+			top: 45%;
+			left: -140%;
+		}
+	}
+	&:after {
+		bottom: -14px;
+
+		@media @tablet {
+			bottom: 45%;
+			right: -140%;
+		}
+	}
+}

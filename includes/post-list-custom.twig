@@ -1,0 +1,147 @@
+{% if plugins.blog.posts[0].featureImageAssetRef is not null %}
+{% set assetRef = plugins.blog.posts[0].featureImageAssetRef %}
+{% set featureImg = plugins.assets.images[assetRef] %}
+
+{% endif %}
+
+{% if plugins.blog.live == 1 or app.mode != 'published' %}
+{% if plugins.blog.posts|length %}
+
+    {% include "includes/header.twig" %}
+
+    <div class="bk-blogpostlist  blogpostlist  widget__blogpostlist">
+
+
+        <article class="blog-hero  feature__background-image" data-image-href="{{ strip_url_scheme(featureImg.url) }}" title="{{ plugins.blog.posts[0].title|raw }}" style="background-image:url('{{ strip_url_scheme(featureImg.url) }}')">
+
+            <a href="/blog/{{plugins.blog.posts[0].slug}}" class="post-hero-link">
+
+                <div class="content-wrap  feature__content-wrap">
+                    {% if plugins.blog.posts[0].category|length %}
+
+                    <div class="post-info  blogpostlist__post-info">
+                        <div class="post-info-category">
+                            <h6 class="post-info-category-title">
+                                <span class="post-info-category-link">{{ plugins.blog.posts[0].category }}</span>
+                                <time class="timestamp  blogpostlist__timestamp" datetime="{{ get_php_date('c', post.publishedDate) }}">{{ post.publishedDate|formatBlogDate(languageCode) }}</time>
+                            </h6>
+                        </div>
+                    </div>
+
+                    {% endif %}
+
+                    <h1 class="headline  feature__headline">{{ plugins.blog.posts[0].title|e }}</h1>
+                    <span class="button  button--primary  feature__button"  href="/blog/{{plugins.blog.posts[0].slug}}">Read more</span>
+
+                </div>
+
+            </a>
+
+        </article>
+
+
+        <div class="main-content">
+            <div class="container">
+
+                <div class="post-items  blogpostlist__post-items">
+
+                    {% for post in plugins.blog.posts %}
+                    {% set postPermalink = '/' ~ plugins.blog.directory ~ '/' ~ post.slug|url_encode %}
+
+                    <div class="post-item  blogpostlist__post-item">
+                        <article class="post-article  blogpostlist__post-article {% if post.category == "Company"%}  post-article--company{% elseif post.category == "Product" %}  post-article--product{% endif %}">
+
+                            {% if post.featureImageAssetRef is not null %}
+                            {% set assetRef = post.featureImageAssetRef %}
+                            {% set featureImg = plugins.assets.images[assetRef] %}
+
+                            <div class="post-image  blogpostlist__post-image">
+
+                                <a class="image-link  blogpostlist__image-link" href="{{ requestBase }}{{ postPermalink }}" style="background-image:url('{{ strip_url_scheme(featureImg.url) }}')">
+                                    <img class="image  blogpostlist__image" src="{{ strip_url_scheme(featureImg.url) }}" alt="{{ post.title|e }}">
+                                </a>
+
+                            </div>
+
+                            {% endif %}
+
+                            <a href="{{ requestBase }}{{ postPermalink }}" class="post-content  blogpostlist__post-content">
+
+                                <header class="post-header  blogpostlist__post-header">
+                                    <div class="post-info  blogpostlist__post-info">
+
+                                        <div class="post-info-category  blogpostlist__post-info-category">
+                                            <h4 class="post-info-category-title  blogpostlist__post-info-category-title">
+                                                <span class="post-info-category-link  blogpostlist__post-info-category-link">{{ post.category }}</span>
+                                                <time class="timestamp  blogpostlist__timestamp" datetime="{{ get_php_date('c', post.publishedDate) }}">{{ post.publishedDate|formatBlogDate(languageCode) }}</time>
+                                            </h4>
+                                        </div>
+                                    </div>
+
+                                    <h2 class="post-title  blogpostlist__post-title">{{ post.title|e }}</h2>
+
+                                </header>
+
+
+                                {% if data.postDisplayType|default('summary') == 'summary' %}
+                                    {% if post.summary|length > 0 %}
+                                    <div class="post-excerpt  blogpostlist__post-excerpt">
+                                        <p>{{ post.summary }}</p>
+                                        <span class="read-more  blogpostlist__read-more">{{ 'widgets.blogpostlist.read_more'|translate('Read more') }}</span>
+                                    </div>
+                                    {% endif %}
+
+                                {% else %}
+                                    <div class="post-excerpt  post-excerpt--full  blogpostlist__post-excerpt--full">
+                                        {{ post.content|raw }}
+                                    </div>
+                                {% endif %}
+
+                            </a>
+
+                        </article>
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+                <footer class="post-list-footer  blogpostlist__post-list-footer">
+                    <nav class="post-pagination  blogpostlist__post-pagination">
+                        <ul class="pagination-list  blogpostlist__pagination-list">
+
+                            {% if plugins.blog.totalPages > 1 and plugins.blog.currentPage != plugins.blog.totalPages and plugins.blog.currentPage <= plugins.blog.totalPages %}
+                            <li class="pagination-item  blogpostlist__pagination-item">
+                                <a class="button  button--pagination  button--previous  icon  icon--previous  blogpostlist__button" href="{{ requestBase }}{{ plugins.blog.pathFormat ~ (plugins.blog.currentPage + 1) }}"><span class="control-text  blogpostlist__control-text">{{ "shared_views.blog-list.older"|translate("Older") }}</span></a>
+                            </li>
+
+                            {% endif %}
+
+                            {% if plugins.blog.currentPage > 1 and plugins.blog.currentPage <= plugins.blog.totalPages %}
+                            <li class="pagination-item  blogpostlist__pagination-item">
+                                <a class="button  button--pagination  button--next  icon  icon--next  blogpostlist__button" href="{{ requestBase }}{{ plugins.blog.pathFormat ~ (plugins.blog.currentPage - 1) }}"><span class="control-text  blogpostlist__control-text">{{ "shared_views.blog-list.newer"|translate("Newer") }}</span></a>
+                            </li>
+
+                            {% endif %}
+
+                        </ul>
+
+                    </nav>
+                </footer>
+
+            </div>
+        </div>
+
+    </div>
+
+    {% elseif app.mode != 'published' and app.mode != 'site-preview' %}
+        <div class="bk-message  bk-message--empty  blogpostlist__bk-message">
+            <p>{{"shared_views.blog.no-post"|translate("You haven’t added any posts yet.")}}</p>
+        </div>
+    {% else %}
+        <div class="bk-message  bk-message--empty  blogpostlist__bk-message">
+            <p>{{"shared_views.blog-list.no-content"|translate("There aren't any posts to display.")}}</p>
+        </div>
+    {% endif %}
+
+{% endif %}

@@ -1,0 +1,386 @@
+// -------------------------------------
+// Template: LESS > Widgets
+// -------------------------------------
+
+
+// #Company Name
+// ------------------------------
+
+
+.company-link {
+    @media @bp-1024 {
+        font-size: bkscale(@font__companyname--font-size, 0.8);
+        line-height: bkscale(@font__companyname--line-height, 0.8);
+    }
+    @media @mobile {
+        font-size: bkscale(@font__companyname--font-size, 0.6);
+        line-height: bkscale(@font__companyname--line-height, 0.6);
+    }
+}
+
+
+
+
+// #Social Icons
+// ------------------------------
+
+
+.social-item {
+    margin-right: 20px;
+
+    @media @tablet {
+        margin-right: 10px;
+    }
+}
+
+.social-link {
+    color: @color__socialicons--icon;
+
+    &:before {
+        font-size: 18px;
+        margin-right: 0;
+    }
+    &:hover {
+        color: @color__link--text;
+    }
+}
+
+.social-name {
+    display: none;
+}
+
+
+
+
+// #Gallery
+// ------------------------------
+
+
+.gallery__gallery-item {
+    float: left;
+    height: 0;
+    width: 33.333%;
+    padding-bottom: 33.333%;
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+
+    @media @mobile {
+        width: 100%;
+        padding-bottom: 100%;
+    }
+}
+
+.gallery__image-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.gallery__image {
+    display: none;
+}
+
+// Caption 
+.caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    min-height: 90px;
+    margin: 0;
+    padding: 10px 20px 14px;
+    .gradient(transparent, #313131);
+}
+.gallery__caption-link {
+    display: inline-block;
+}
+.image-title,
+.image-description {
+    font-size: 12px;
+    line-height: 22px;
+    color: white;
+}
+.image-description {
+    opacity: .7;
+}
+
+
+
+
+// #Slideshow
+// ------------------------------
+
+
+.responsiveslideshow {
+    .figure {
+        @media @mobile {
+            min-height: 230px;
+        }
+    }
+    .caption {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        text-align: left;
+        .gradient(transparent, #313131);
+        padding: 20px;
+
+        @media @mobile {
+            padding: 10px 16px;
+        }
+    }
+    .icon:before,
+    .icon:after {
+        position: relative;
+        top: -8px;
+        margin: 0;
+        color: @color__primary;
+    }
+    .button {
+        min-width: auto;
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        .gradient(transparent, transparent);
+        border: 2px solid @color__primary;
+        border-radius: 100px;
+    }
+    .button--pagination {
+        width: 16px;
+        height: 16px;
+        margin: 0 4px;
+        text-indent: -9999px;
+    }
+}
+
+.slides-list {
+    position: relative;
+}
+
+
+// Navigation
+.slide-navigation {
+    position: absolute;
+    top: 35%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+
+    @media @mobile {
+        top: 30%;
+    }
+}
+.next-button,
+.previous-button {
+    position: relative;
+}
+.previous-button {
+    left: -46px;
+
+    @media @tablet {
+        left: 20px;
+    }
+    @media @mobile {
+        left: 10px;
+    }
+
+    &:before {
+        left: 1px;
+    }
+}
+.next-button {
+    right: -46px;
+
+    @media @tablet {
+        right: 20px;
+    }
+    @media @mobile {
+        right: 10px;
+    }
+
+    &:after {
+        content: "\f054";
+        position: relative;
+        left: 3px;
+        opacity: 1;
+        .gradient(transparent, transparent);
+    }
+}
+.pause-toggle:before {
+    left: 3px;
+}
+
+
+// Pagination
+.slide-pagination {
+    margin-top: 40px;
+    text-align: center;
+
+    @media @tablet {
+        margin-top: 30px;
+    }
+
+    .control-text {
+        display: none;
+    }
+}
+
+
+
+
+// #Twitter Feed
+// ------------------------------
+
+
+// Tweet List
+.tweet-list {
+    margin: 0 -20px;
+}
+
+
+// Tweet Item
+.tweet-item {
+    position: relative;
+    display: inline-block;
+    float: left;
+    width: 33.333%;
+    padding: 0 10px;
+    margin-bottom: 40px;
+
+    @media @tablet {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    @media @mobile {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    &:last-child {
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+}
+
+
+// Avatar
+.twitter__avatar {
+    position: absolute;
+}
+.twitter__avatar-image {
+    width: 60px;
+    height: 60px;
+    display: block;
+}
+.avatar-link {
+    display: inline-block;
+}
+
+
+// Tweet Content
+.tweet-content {
+    padding-top: 15px;
+    position: relative;
+
+    a {
+        display: inline-block;
+        -ms-word-break: break-all;
+        word-break: break-all;
+        word-break: break-word;
+        -webkit-hyphens: auto;
+        -moz-hyphens: auto;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+}
+
+
+// Account Link
+.twitter__account-link {
+    display: block;
+    font-size: 19px;
+    line-height: 60px;
+    min-height: 60px;
+    margin-left: 75px;
+    color: @color__h2--text;
+}
+
+.responsivecolumns .twitter__account-link {
+    @media only screen and (max-width: 1024px) {
+        line-height: 26px;
+    }
+}
+
+
+// Tweet Metadata
+.tweet-metadata {
+    font-family: @font__h4--font-family;
+    font-size: 12px;
+    color: fade(@color__p--text, 50%);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    @media @bp-global-small {
+        font-size: 10px;
+    }
+
+    a {
+        color: fade(@color__p--text, 50%);
+    }
+}
+
+
+// Tweet Source
+.tweet-source {
+    color: fade(@color__p--text, 50%);
+}
+
+
+// Timestamp
+.twitter__timestamp {
+    font-size: 12px;
+    color: @color__p--text;
+
+    @media @bp-global-small {
+        font-size: 10px;
+    }
+}
+
+
+// Retweeted By
+.retweeted-by {
+    margin-left: 14px;
+}
+
+
+// When in Four Columns
+.columns-four {
+    &.-first,
+    &.-second,
+    &.-third,
+    &.-fourth {
+        .retweeted-by {
+            @media only screen and (max-width: 1024px) {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+
+// Columns Variations
+.responsivecolumns .column .tweet-item {
+    width: 100%;
+}

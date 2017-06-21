@@ -1,0 +1,25 @@
+<!-- Footer -->
+<footer class="template-footer">
+    <div class="container">
+
+        <div class="footer-item">
+            {{widget('profile', 'profilearea', {
+                'profileType':'email',
+                'email':'profile'
+            })|raw}}
+        </div>
+        <div class="footer-item">
+            {{widget('socialicons', 'socialnetworks', {
+                'googleplus': 'profile',
+                'linkedin':'profile',
+                'facebook': 'profile',
+                'twitter': 'profile',
+                'youtube': 'profile',
+                'rss': 'profile',
+                'pinterest': 'profile',
+                'instagram': 'profile'
+            })|raw}}
+        </div>
+
+    </div>
+</footer>

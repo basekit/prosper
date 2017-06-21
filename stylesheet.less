@@ -1,0 +1,178 @@
+// -------------------------------------
+// Template: Stylesheet
+// -------------------------------------
+
+
+#tdk-toolbar {
+    display: none!important;
+}
+
+
+
+// -----------------------------
+// #Imports
+// -----------------------------
+
+@import "@{templateCommon}/bk-less-framework-v8.less";  // LESS Framework v8
+
+@import "@{templateLocal}/less/typography.less";
+@import "@{templateLocal}/less/mixins.less";
+@import "@{templateLocal}/less/navigation.less";
+@import "@{templateLocal}/less/hero.less";
+@import "@{templateLocal}/less/forms.less";
+@import "@{templateLocal}/less/blog.less";
+@import "@{templateLocal}/less/widgets.less";
+
+
+
+// Glboal Breakpoints
+// ------------------------------
+
+@bp-1200: ~"only screen and (max-width: 1200px)";
+@bp-1100: ~"only screen and (max-width: 1100px)";
+@bp-1024: ~"only screen and (max-width: 1024px)";
+@bp-769:  ~"only screen and (max-width: 769px)";
+@tablet:  ~"only screen and (max-width: 850px)";
+@mobile:  ~"only screen and (max-width: 650px)";
+@bp-320:  ~"only screen and (max-width: 320px)";
+
+
+
+// Site Styles
+// ------------------------------
+
+
+// Widget Spacing
+.widget--zone-widget {
+    margin-bottom: 40px;
+}
+
+
+// Site Container
+.site-container {
+    overflow: hidden;
+}
+
+// Container
+.container {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+// Main
+.main-content {
+    position: relative;
+    z-index: 1;
+    padding: 30px 0 100px;
+
+     &:before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: -80px;
+        left: -5%;
+        right: 0;
+        border-radius: 100%;
+        width: 110%;
+        height: 250px;
+        background-color: @color__body--background;
+
+        @media @tablet {
+            height: 150px;
+        }
+    }
+
+    .container {
+        margin-top: -160px;
+        padding: 60px;
+        background-color: white;
+        box-shadow: 0 20px 40px rgba(214, 214, 214, 0.1);
+
+        @media @tablet {
+            margin-top: -120px;
+            padding: 40px;
+        }
+        @media @mobile {
+            padding: 30px;
+        }
+    }
+}
+
+
+
+
+// ------------------------------
+// #Global Styles
+// ------------------------------
+
+
+// #Header
+// ------------------------------
+
+.template-header {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    padding: 30px 0;
+
+    @media @tablet {
+        padding: 20px 0;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.header-item--logo {
+    display: flex;
+    align-items: center;
+    min-width: 30%;
+}
+
+.logo {
+    margin-right: 20px;
+}
+
+
+// #Footer
+// ------------------------------
+
+.template-footer {
+    position: relative;
+    z-index: 1;
+    padding: 20px 0;
+    background-color: @color__footer--background;
+    border-top: 1px solid darken(@color__footer--background, 10%);
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+
+        @media @mobile {
+            display: block;
+            text-align: center;
+        }
+    }
+
+    // Footer Profile
+    .emailaddress__email {
+        color: @color__p--text;
+
+        &:hover {
+            color: @color__link--text;
+        }
+    }
+}
+
+.footer-item:first-child {
+    @media @mobile {
+        margin-bottom: 10px;
+    }
+}

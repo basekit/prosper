@@ -1,0 +1,178 @@
+// --------------------------------
+// Template: CSS > Forms
+// --------------------------------
+
+
+.form {
+	position: relative;
+}
+
+.form-group {
+	margin-bottom: 20px;
+
+	&:first-child {
+		margin-top: 30px;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+// Legend
+.legend {
+	position: relative;
+	font-size: @font__h2--font-size;
+	line-height: @font__h2--line-height;
+	color: @font__h2--color;
+	text-align: center;
+
+	&:after {
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: -10px;
+		width: 30px;
+		height: 3px;
+		margin: 0 auto;
+		background-color: @color__button--background;
+	}
+}
+
+// Label
+.label {
+	margin-bottom: 10px;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 30px;
+	color: @color__form-label--text;
+	-webkit-font-smoothing: antialiased;
+}
+
+// Input
+input[type="search"], 
+input[type="email"], 
+input[type="password"], 
+textarea, 
+.input--single-line,
+.select-wrap {
+	padding: 18px 16px;
+	border: none;
+	border: 1px solid darken(@color__body--background, 10%);
+	border-radius: 4px;
+	box-shadow: 0 2px 4px rgba(110, 110, 110, 0.1);
+
+	&:focus {
+		box-shadow: none;
+	}
+}
+
+// Placeholders
+::-webkit-input-placeholder {
+   color: @color__p--text;
+   opacity: .6;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: @color__p--text;
+   opacity: .6;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: @color__p--text;
+   opacity: .6;
+}
+
+:-ms-input-placeholder {
+   color: @color__p--text;
+   opacity: .6;
+}
+
+
+// Signup / Blog Search
+.signupform,
+.blogsearch {
+	.form-body {
+		display: flex;
+		align-items: flex-end;
+
+		@media @mobile {
+	        display: block;
+	    }
+	}
+	.legend {
+		display: none;
+	}
+	.form-group {
+		margin: 0;
+
+		&:first-child {
+			flex: 1;
+		}
+	}
+	.button {
+		margin-left: 16px;
+
+		@media @mobile {
+			margin-top: 16px;
+	        margin-left: 0;
+	    }
+	}
+}
+
+
+
+
+// Advanced Contact
+// -----------------------------
+
+
+.option-list {
+	.label--radio,
+	.label--checkbox {
+		margin: 0 20px 0 4px;
+	}
+}
+.option-item {
+	display: inline-block;
+}
+
+.select-wrap {
+	position: relative;
+	padding: 11px 10px;
+
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		top: 27px;
+		right: 20px;
+		display: block;
+		width: 10px;
+		height: 2px; 
+		background-color: @color__p--text;
+	}
+	&:before {
+		transform: rotate(45deg) translateX(-23%);
+  		transform-origin: top left;
+	}
+	&:after {
+		transform: rotate(-45deg) translateX(23%);
+  		transform-origin: top right;
+		right: 21px;
+	}
+}
+.advancedcontactform__select {
+	border:none;
+    background-image:none;
+    background-color:transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    font-size: 14px;
+    -webkit-appearance: none;
+
+    &:hover {
+    	background-color: transparent;
+    }
+}
