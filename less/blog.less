@@ -56,10 +56,19 @@
     margin: 0 -20px;
 
     .blogpostlist__post-info {
+    }
+
+    // If no image
+    .post-image + .post-content .post-info {
         position: absolute;
         top: -43px;
         left: 0;
         right: 0;
+
+        .post-info-category-link,
+        .blogpostlist__timestamp {
+            color: white;
+        }
     }
 }
 .post-item {
@@ -117,7 +126,7 @@
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #fff;
+    color: @color__p--text;
 }
 .blogpostlist__timestamp {
     opacity: .7;
