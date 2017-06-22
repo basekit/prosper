@@ -3,12 +3,19 @@
 
 <div class="bk-blogpost  blogpost  widget__blogpost">
 
-    <article class="blog-hero  {% if plugins.blog.posts[0].featureImageAssetRef is not null %}post-article--has-image{% endif %}  blogpost__post-article">
+    {% if plugins.blog.posts[0].featureImageAssetRef is not null %}
+    {% set assetRef = plugins.blog.posts[0].featureImageAssetRef %}
+    {% set featureImg = plugins.assets.images[assetRef] %}
 
-        <div class="post-content  blogpost__post-content">
+    {% include "includes/header.twig" %}
+
+    <div class="blog-hero  blog-hero--post  feature__background-image" data-image-href="{{ strip_url_scheme(featureImg.url) }}" rel="lightbox" title="{{ plugins.blog.posts[0].title|raw }}" style="background-image:url('{{ strip_url_scheme(featureImg.url) }}')">
+
+        {% endif %}
+
+        <div class="content-wrap  feature__content-wrap">
 
             <header class="post-header  blogpostlist__post-header">
-
                 <div class="post-info  blogpostlist__post-info">
 
                     {% if plugins.blog.posts[0].category|length %}
@@ -16,110 +23,92 @@
                     <div class="post-info-category  blogpostlist__post-info-category">
                         <h4 class="post-info-category-title  blogpostlist__post-info-category-title">
                             <a class="post-info-category-link  blogpostlist__post-info-category-link" href="{{ requestBase }}/{{ plugins.blog.directory }}/categories/{{ plugins.blog.posts[0].category|url_encode(true) }}">{{ plugins.blog.posts[0].category }}</a>
+                            <time class="timestamp  blogpostlist__timestamp" datetime="{{ get_php_date('c', post.publishedDate) }}">{{ post.publishedDate|formatBlogDate(languageCode) }}</time>
                         </h4>
                     </div>
 
                     {% endif %}
 
                 </div>
-
-                <h2 class="post-title  blogpost__post-title">{{ plugins.blog.posts[0].title|e }}</h2>
-
             </header>
+
+            <h1 class="headline  feature__headline">{{ plugins.blog.posts[0].title|e }}</h1>
 
         </div>
 
+    </div>
 
-            {% if plugins.blog.posts[0].featureImageAssetRef is not null %}
-            {% set assetRef = plugins.blog.posts[0].featureImageAssetRef %}
-            {% set featureImg = plugins.assets.images[assetRef] %}
+    <div class="main-content">
+        <div class="container">
+            <div id="post-body" class="post-body  blogpost__post-body">
 
-            <div class="post-image  blogpost__post-image">
-                <a class="image-link  blogpost__image-link" href="#" data-image-href="{{ strip_url_scheme(featureImg.url) }}" rel="lightbox" title="{{ plugins.blog.posts[0].title|raw }}" style="background-image:url('{{ strip_url_scheme(featureImg.url) }}')">
-                    <img class="image  blogpost__image" src="{{ strip_url_scheme(featureImg.url) }}" alt="{{ plugins.blog.posts[0].title|raw }}">
-                </a>
-            </div>
+                {% if data.showSharingIcons %}
 
-        {% endif %}
+                    <ul class="sharing-links  blogpost__sharing-links">
+                        <li class="network-item  blogpost__network-item">
+                            <button class="button  icon  icon--twitter  blogpost__button  js-twitter-btn">{{ 'widgets.blogpost.tweet'|translate('Share on Twitter') }}</button>
+                        </li>
 
+                        <li class="network-item  blogpost__network-item">
+                            <button class="button  icon  icon--facebook  blogpost__button  js-facebook-btn">{{ 'widgets.blogpost.share_facebook'|translate('Share on Facebook') }}</button>
+                        </li>
 
-        <div id="post-body" class="post-body  blogpost__post-body">
-
-            <div class="post-body--container">
-                <time class="timestamp  blogpostlist__timestamp" datetime="{{ get_php_date('c', post.publishedDate) }}">{{ post.publishedDate|formatBlogDate(languageCode) }}</time>
-
-                <ul class="sharing-links  sharing-links--sticky  blogpost__sharing-links">
-                    <li class="sharing-title">Share this post:</li>
-                    <li class="network-item  blogpost__network-item">
-                        <button class="button  button--facebook  blogpost__button  js-facebook-btn"  href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbasekit.com%2Fblog&t=" target="_blank" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"><span class="sharing-button-text">Share</span></button>
-                    </li>
-                    <li class="network-item  blogpost__network-item">
-                        <button class="sharer  button  button--twitter  blogpost__button  js-twitter-btn"  href="https://twitter.com/intent/tweet?source=http%3A%2F%2Fbasekit.com%2Fblog&text=:%20http%3A%2F%2Fbasekit.com%2Fblog" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><span class="sharing-button-text">Tweet</span></button>
-                    </li>
-                    <li class="network-item  blogpost__network-item"  href="">
-                        <button class="button  button--linkedin  blogpost__button"  href="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fbasekit.com%2Fblog&title=&summary=&source=http%3A%2F%2Fbasekit.com%2Fblog" target="_blank" title="Share on LinkedIn" onclick="window.open('http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(document.URL) + '&title=' +  encodeURIComponent(document.title)); return false;"><span class="sharing-button-text">Share</span></button>
-                    </li>
-                    <li class="network-item  blogpost__network-item">
-                        <a href="#disqus-scroll" class="button  button--comment  blogpost__button"><span class="sharing-button-text">Comment</span></a>
-                    </li>
-                </ul>
-
-            </div>
-
-            <div class="post-body-content  post-body-content--sticky  blogpost__post-body-content">
-
-                {{ plugins.blog.posts[0].content|raw }}
-
-            </div>
-
-            <footer class="post-footer  blogpost__post-footer">
-
-                {% if plugins.blog.posts[0].category|length > 0 or plugins.blog.posts[0].tags|length > 0 %}
-                <div class="post-attributes  blogpost__post-attributes">
-
-                    {% if plugins.blog.posts[0].category|length %}
-                    <div class="post-category  blogpost__post-category">
-                        <p class="category-title  blogpost__category-title">{{"shared_views.blog.category"|translate("Category")}}</p>
-                        <a class="category-link  product__category-link" href="{{ requestBase }}/{{ plugins.blog.directory }}/categories/{{ plugins.blog.posts[0].category|url_encode(true) }}">{{ plugins.blog.posts[0].category }}</a>
-                    </div>
-                    {% endif %}
-
-                    {% if plugins.blog.posts[0].tags|length %}
-                    <div class="post-tags  blogpost__post-tags">
-                        <p class="tags-title  blogpost__tags-title">{{"shared_views.blog.tags"|translate("Tags")}}</p>
-
-                        {% set tags = plugins.blog.posts[0].tags %}
-                        {% set count = 0 %}
-
-                        <ul class="tag-list  blogpost__tag-list">
-                            {% for tag in tags %}
-                            {% set count = count + 1 %}
-
-                            <li class="tag-item  blogpost__tag-item">
-                                <a class="tag-link  blogpost__tag-link" href="{{ requestBase }}/{{ plugins.blog.directory }}/tags/{{ tag|url_encode(true) }}">{{ tag }}</a>
-                            </li>
-
-                            {% endfor %}
-                        </ul>
-
-                    </div>
-
-                    {% endif %}
-
-                </div>
+                        {% if brandCapabilities.disableGoogleServices != 1 %}
+                        <li class="network-item  blogpost__network-item">
+                            <button class="button  icon  icon--googleplus  blogpost__button  js-googleplus-btn">{{ 'widgets.blogpost.share_google_plus'|translate('Share on Google+') }}</button>
+                        </li>
+                        {% endif %}
+                    </ul>
 
                 {% endif %}
 
-            </footer>
+                <div class="post-body-content  post-body-content--sticky  blogpost__post-body-content">
+                    {{ plugins.blog.posts[0].content|raw }}
+                </div>
 
-            <!-- Disqus Comments -->
-            <div id="disqus-scroll" class="disqus-comments">
-                {{widget('disqus', 'blog-disqus', {})|raw}}
+                <footer class="post-footer  blogpost__post-footer">
+
+                    {% if plugins.blog.posts[0].category|length > 0 or plugins.blog.posts[0].tags|length > 0 %}
+                    <div class="post-attributes  blogpost__post-attributes">
+
+                        {% if plugins.blog.posts[0].category|length %}
+                        <div class="post-category  blogpost__post-category">
+                            <p class="category-title  blogpost__category-title">{{"shared_views.blog.category"|translate("Category")}}</p>
+                            <a class="category-link  product__category-link" href="{{ requestBase }}/{{ plugins.blog.directory }}/categories/{{ plugins.blog.posts[0].category|url_encode(true) }}">{{ plugins.blog.posts[0].category }}</a>
+                        </div>
+                        {% endif %}
+
+                        {% if plugins.blog.posts[0].tags|length %}
+                        <div class="post-tags  blogpost__post-tags">
+                            <p class="tags-title  blogpost__tags-title">{{"shared_views.blog.tags"|translate("Tags")}}</p>
+
+                            {% set tags = plugins.blog.posts[0].tags %}
+                            {% set count = 0 %}
+
+                            <ul class="tag-list  blogpost__tag-list">
+                                {% for tag in tags %}
+                                {% set count = count + 1 %}
+
+                                <li class="tag-item  blogpost__tag-item">
+                                    <a class="tag-link  blogpost__tag-link" href="{{ requestBase }}/{{ plugins.blog.directory }}/tags/{{ tag|url_encode(true) }}">{{ tag }}</a>
+                                </li>
+
+                                {% endfor %}
+                            </ul>
+
+                        </div>
+
+                        {% endif %}
+
+                    </div>
+
+                    {% endif %}
+
+                </footer>
+
             </div>
-
         </div>
-
-    </article>
+    </div>
 
 </div>
 
