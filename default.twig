@@ -2,16 +2,10 @@
 
 {% block content %}
 
+<!-- Page Content -->
 <section class="page  page--default">
 
-
-    {% include "includes/header.twig" %}
-
-
-    <div class="page-title">
-        {{widget('pagetitle', 'page-title', {})|raw}}
-    </div>
-
+    {% include "includes/hero-default.twig" %}
 
     <!-- Zone Content -->
     <div class="main-content">
@@ -19,9 +13,6 @@
             {{zone('main')|raw}}
         </div>
     </div>
-
-
 </section>
 
 {% endblock %}
-

@@ -21,10 +21,19 @@
 // Legend
 .legend {
 	position: relative;
-	font-size: @font__h2--font-size;
-	line-height: @font__h2--line-height;
+	font-size: 32px;
+	line-height: 44px;
 	color: @font__h2--color;
 	text-align: center;
+
+	@media @tablet {
+        font-size: 28px;
+		line-height: 40px;
+    }
+    @media @mobile {
+        font-size: 24px;
+		line-height: 36px;
+    }
 
 	&:after {
 		content: "";

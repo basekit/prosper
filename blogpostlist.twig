@@ -5,7 +5,8 @@
 <!-- Page Content -->
 <div class="page  page--blogpostslist">
 
-	{{widget('blogpostlist', 'allblogposts', {})|raw}}
+    {% include "includes/post-list-custom.twig" %}
+	{# {{widget('blogpostlist', 'allblogposts', {})|raw}} #}
 
 </div>
 

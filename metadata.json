@@ -136,7 +136,7 @@
         },
         "typography": {
             "font__h1--font-family": "@font-swatch1-font-family",
-            "font__h1--font-size": "30px",
+            "font__h1--font-size": "44px",
             "font__h1--font-weight": "@font-swatch1-font-weight",
             "font__h1--line-height": "44px",
             "font__h1--letter-spacing": "@font-swatch1-letter-spacing",
