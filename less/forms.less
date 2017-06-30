@@ -58,10 +58,10 @@
 }
 
 // Input
-input[type="search"], 
-input[type="email"], 
-input[type="password"], 
-textarea, 
+input[type="search"],
+input[type="email"],
+input[type="password"],
+textarea,
 .input--single-line,
 .select-wrap {
 	padding: 18px 16px;
@@ -100,8 +100,8 @@ textarea,
 // Blog Search
 .blogsearch {
 	.form-body {
-		display: flex;
-		align-items: flex-end;
+		.flex-display;
+        .align-items(flex-end);
 
 		@media @mobile {
 	        display: block;
@@ -127,6 +127,19 @@ textarea,
 	}
 }
 
+
+// Columns Variations
+.responsivecolumns .column .blogsearch {
+
+    .form-body {
+        display: block;
+    }
+
+    .button {
+        margin-left: 0;
+        width: 100%;
+    }
+}
 
 
 
@@ -156,7 +169,7 @@ textarea,
 		right: 20px;
 		display: block;
 		width: 10px;
-		height: 2px; 
+		height: 2px;
 		background-color: @color__p--text;
 	}
 	&:before {

@@ -25,8 +25,8 @@
 	box-shadow: 0 9px 10px rgba(0,0,0,0.1);
 
 	@media @tablet {
-		display: flex;
-		align-items: center;
+		.flex-display;
+		.align-items(center);
 	}
 	@media @mobile {
 		padding: 16px 12px;
@@ -111,63 +111,60 @@
 		background-color: @color__feature-content--background;
 		flex-direction: column;
 		justify-content: center;
-		align-items: center;
+		.align-items(center);
 		text-align: center;
 		overflow-y: auto;
 	}
 
 	&.open {
-		display: flex;
+		.flex-display;
 	}
 }
+
 
 
 // Dropdown Menu
 // -------------
 
-.folder-toggle {
-	&:before,
-	&:after {
-		content: '';
-		position: absolute;
-		top: 18px;
-		right: 0;
-		display: block;
-		width: 8px;
-		height: 1px; 
-		background-color: @color__navigation--text;
+// .folder-toggle {
+// 	&:before,
+// 	&:after {
+// 		content: '';
+// 		position: absolute;
+// 		top: 18px;
+// 		right: 0;
+// 		display: block;
+// 		width: 8px;
+// 		height: 1px;
+// 		background-color: @color__navigation--text;
 
-		@media @tablet {
-			top: 24px;
-			right: -10px;
-			width: 10px;
-			height: 2px;
-		}
-	}
-	&:before {
-		transform: rotate(45deg) translateX(-23%);
-  		transform-origin: top left;
-	}
-	&:after {
-		transform: rotate(-45deg) translateX(23%);
-  		transform-origin: top right;
+// 		@media @tablet {
+// 			top: 24px;
+// 			right: -10px;
+// 			width: 10px;
+// 			height: 2px;
+// 		}
+// 	}
+// 	&:after {
+// 		transform: translateY(20px);
 
-  		@media @tablet {
-			right: -9px;
-		}
-	}
+//   		@media @tablet {
+// 			right: -9px;
+// 			transform: translateY(0);
+// 		}
+// 	}
 
-	&:hover {
-		opacity: 1;
-	}
+// 	&:hover {
+// 		opacity: 1;
+// 	}
 
-}
+// }
 
 .navigation-item:hover {
 	.navigation-list--children {
 		min-width: 130px;
 		padding: 10px;
-		background-color: fade(@color__primary, 50%);
+		background-color: fade(@color__primary, 65%);
 		border: 2px solid fade(@color__navigation--text, 20%);
 		border-radius: 4px;
 		text-align: center;
@@ -249,7 +246,7 @@
 		top: -14px;
 
 		@media @tablet {
-			top: 45%;
+			top: 25px;
 			left: -140%;
 		}
 	}
@@ -257,7 +254,8 @@
 		bottom: -14px;
 
 		@media @tablet {
-			bottom: 45%;
+			bottom: initial;
+			top: 25px;
 			right: -140%;
 		}
 	}

@@ -13,9 +13,9 @@
 // Background
 .feature__background-image {
     position: relative;
-    display: flex;
+    .flex-display;
     justify-content: center;
-    align-items: center;
+    .align-items(center);
     min-height: 750px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -118,18 +118,18 @@
 
 .hero--default {
     position: relative;
-    display: flex;
+    .flex-display;
     justify-content: center;
-    align-items: center;
+    .align-items(center);
     min-height: 500px;
     .gradient (fade(@color__feature-content--background, 75%), @color__feature-content--background);
     text-align: center;
 
     @media @tablet {
-        min-height: 400px;
+        min-height: 500px;
     }
     @media @mobile {
-        min-height: 320px;
+        min-height: 450px;
     }
 
     h1, h2, h3, h4, p {

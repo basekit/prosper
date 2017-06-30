@@ -51,6 +51,17 @@
 
 
 
+// #Image
+// ------------------------------
+
+
+.imagewidget__figure {
+    display: inline-block;
+    position: relative;
+}
+
+
+
 
 // #Gallery
 // ------------------------------
@@ -87,13 +98,13 @@
     display: none;
 }
 
-// Caption 
+// Caption
 .caption {
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-    display: flex;
+    .flex-display;
     flex-direction: column;
     justify-content: flex-end;
     width: 100%;
@@ -178,8 +189,8 @@
     top: 35%;
     left: 0;
     right: 0;
-    display: flex;
-    justify-content: space-between;
+    .flex-display;
+    .justify-content(space-between);
 
     @media @mobile {
         top: 30%;
@@ -382,4 +393,14 @@
 // Columns Variations
 .responsivecolumns .column .tweet-item {
     width: 100%;
+}
+
+
+
+
+// #Divider Line
+// ------------------------------
+
+hr.rule {
+    background-color: @color__p--text;
 }

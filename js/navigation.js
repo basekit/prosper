@@ -4,10 +4,10 @@
 
 
 // Toggles class open to display/hide the whole navigation
-$( ".navigation-list" ).addClass( "closed" );
+$( ".navigation-list, body" ).addClass( "closed" );
 
 $( ".nav-toggle" ).click(function() {
-	$( ".navigation-list" ).toggleClass( "open" ).toggleClass( "closed" );
+	$( ".navigation-list, body" ).toggleClass( "open" ).toggleClass( "closed" );
 });
 
 
