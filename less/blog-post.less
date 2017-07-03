@@ -141,6 +141,15 @@
 .blogpost__timestamp,
 .blogpost__sharing-links {
     width: 50%;
+
+    @media @bp-769 {
+        width: 100%;
+    }
+}
+
+
+.blogpost__tag-link {
+    font-size: 15px;
 }
 
 
@@ -153,6 +162,10 @@
 
 .blogpost__sharing-links {
     text-align: right;
+
+    @media @bp-769 {
+        text-align: left;
+    }
 }
 
 
@@ -173,6 +186,11 @@
 
 .blogpost__post-category {
     margin-right: 20px;
+}
+
+
+.network-item {
+    margin-top: 0;
 }
 
 
