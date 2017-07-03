@@ -95,7 +95,7 @@
 
 
 .blogpost__post-body {
-    padding: 60px;
+    padding: 60px 60px 30px;
     top: -100px;
     text-align: left;
 
@@ -108,8 +108,9 @@
 .blogpost__post-footer {
     .flex-display;
     .justify-content(space-between);
-    .align-items(center);
-    padding: 0 60px 25px;
+    .align-items(flex-end);
+    .flex-wrap(wrap);
+    padding: 0 60px 30px;
     top: -100px;
 
     @media @bp-769 {
@@ -121,13 +122,26 @@
 
 .blogpost__post-attributes,
 .post-footer .blogpost__timestamp {
-    margin: 0;
+    margin: 0 0 10px;
+}
+
+
+.blogpost__timestamp,
+.blogpost__sharing-links {
+    width: 50%;
+}
+
+
+.blogpost__sharing-links {
+    text-align: right;
 }
 
 
 .blogpost__post-attributes {
     .flex-display;
+    .flex-order(-1);
     .flex-wrap(wrap);
+    width: 100%;
 
     @media @bp-769 {
         display: block;
@@ -141,3 +155,20 @@
     margin-right: 20px;
 }
 
+
+.blogpost__button {
+    background: transparent;
+    border: none;
+    font-size: 15px;
+    line-height: 20px;
+    min-width: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    height: 25px;
+    width: 25px;
+
+    &:before {
+        color: @color__p--text;
+    }
+}
