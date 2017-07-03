@@ -1,0 +1,143 @@
+// --------------------------------
+// Template: CSS > Blog Post
+// --------------------------------
+
+
+// -----------------------------
+// #Blog Post
+// -----------------------------
+
+.blogpost__post-article:last-child {
+    margin-bottom: 0;
+}
+
+
+.blogpost__post-image:after {
+    background-color: @color__body--background;
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: -80px;
+    left: -5%;
+    right: 0;
+    border-radius: 100%;
+    width: 110%;
+    height: 125px;
+}
+
+
+.blogpost__post-image {
+    position: relative;
+}
+
+
+.blogpost__image-link {
+
+
+    .image {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+
+.blogpost__post-header {
+    .flex-display;
+    .justify-content(center);
+    .align-items(center);
+    margin: 0 auto;
+    max-width: 860px;
+    min-height: 750px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    @media only screen and (max-width: 860px) {
+        margin: 0 30px;
+    }
+
+    @media @tablet {
+        min-height: 600px;
+    }
+
+    @media @mobile {
+        min-height: 520px;
+    }
+}
+
+
+.blogpost__post-title {
+    color: @color__blogpost-title--text;
+}
+
+
+.blogpost__post-content {
+    padding: 0;
+    position: initial;
+}
+
+
+.blogpost__post-body,
+.blogpost__post-footer {
+    background-color: white;
+    box-shadow: 0 20px 40px rgba(214,214,214,0.1);
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+
+    @media only screen and (max-width: 860px) {
+        margin: 0 30px;
+    }
+}
+
+
+.blogpost__post-body {
+    padding: 60px;
+    top: -100px;
+    text-align: left;
+
+    @media @bp-769 {
+        padding: 40px 30px 15px;
+    }
+}
+
+
+.blogpost__post-footer {
+    .flex-display;
+    .justify-content(space-between);
+    .align-items(center);
+    padding: 0 60px 25px;
+    top: -100px;
+
+    @media @bp-769 {
+        display: block;
+        padding: 0 40px 25px;
+    }
+}
+
+
+.blogpost__post-attributes,
+.post-footer .blogpost__timestamp {
+    margin: 0;
+}
+
+
+.blogpost__post-attributes {
+    .flex-display;
+    .flex-wrap(wrap);
+
+    @media @bp-769 {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+
+.blogpost__post-category {
+    margin-right: 20px;
+}
+

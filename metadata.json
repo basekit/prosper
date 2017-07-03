@@ -2,7 +2,7 @@
     "name":"Sunset",
     "widgetVersion": 2,
     "thumbnail":"sunset.png",
-    "pageTypes": [ "home" ],
+    "pageTypes": [ "home", "blogpost" ],
     "screenshot":"sunset-screenshot.jpg",
      "images":[
         "images/gallery/gallery-image--1.jpg",
@@ -138,7 +138,7 @@
             "font__h1--font-family": "@font-swatch1-font-family",
             "font__h1--font-size": "44px",
             "font__h1--font-weight": "@font-swatch1-font-weight",
-            "font__h1--line-height": "44px",
+            "font__h1--line-height": "48px",
             "font__h1--letter-spacing": "@font-swatch1-letter-spacing",
             "color__h1--text": "#3a3434",
             "font__h2--font-family" : "@font-swatch2-font-family",
@@ -231,7 +231,7 @@
             "color__blogpost-article--background" : "#fff",
             "color__blogsearch-legend--text" : "@color__form-legend--text",
             "color__blogpost-title--background" : "@color__secondary",
-            "color__blogpost-title--text" : "@color__h1--text"
+            "color__blogpost-title--text" : "white"
         },
         "ecommerce": {
             "color__ecomproductslist-product-title--text" : "@color__p--text",

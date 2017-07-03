@@ -5,7 +5,9 @@
 <!-- Page Content -->
 <div class="page  page--blogpost">
 
-	{% include "includes/post-custom.twig" %}
+    {% include "includes/header.twig" %}
+
+    {{widget('blogpost', 'singleblogpost', {})|raw}}
 
 </div>
 
