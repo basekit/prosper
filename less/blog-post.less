@@ -42,16 +42,14 @@
 
 
 .blogpost__post-header {
+    background-color: @color__blogpost-article--background;
     .flex-display;
     .justify-content(center);
     .align-items(center);
     margin: 0 auto;
-    max-width: 860px;
+    max-width: 100%;
     min-height: 750px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    position: relative;
     z-index: 2;
 
     @media only screen and (max-width: 860px) {
@@ -65,6 +63,16 @@
     @media @mobile {
         min-height: 520px;
     }
+}
+
+
+.post-article--has-image .blogpost__post-header {
+    background-color: transparent;
+    max-width: 860px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 
@@ -189,8 +197,19 @@
 }
 
 
+.blogpost__sharing-links .network-item:last-child {
+    margin-right: 0;
+}
+
+
 .network-item {
     margin-top: 0;
+
+    .button:hover {
+        background-color: transparent;
+        color: @color__p--text;
+        text-deocration: none;
+    }
 }
 
 

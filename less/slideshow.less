@@ -130,6 +130,7 @@
     overflow: hidden;
     margin: 20px 0;
     @media @tablet {
+    	margin-bottom: 0;
         max-height: 350px;
     }
     @media @mobile {
@@ -203,7 +204,7 @@
         width: 40px;
         height: 40px;
         min-height: initial;
-        line-height: 30px;
+        line-height: 38px;
         font-size: 30px;
         border: none;
         &:hover {
@@ -424,7 +425,6 @@
     .responsiveslideshow__pause-toggle {
         left: 50%;
         margin-left: -20px;
-        margin-top: 5px;
     }
     .responsiveslideshow__previous-button:before,
     .responsiveslideshow__next-button:after {
@@ -438,5 +438,9 @@
         font-family: @font__p--font-family;
         font-size: bkscale(@font__p--font-size,0.9);
         line-height: bkscale(@font__p--line-height,0.9);
+    }
+
+    .slide-pagination .pagination-list .button {
+    	margin: 0 2px;
     }
 }
