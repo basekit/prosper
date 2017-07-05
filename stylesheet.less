@@ -53,7 +53,36 @@
 
 .droppable-highlight {
     z-index: 10006;
+
+
+    &.drop-bottom,
+    &.drop-top,
+    &.drop-left,
+    &.drop-right {
+        border-color: #009488;
+    }
+
+    &.drop-top {
+        border-style: solid;
+        border-top-width: 10px;
+    }
+
+    &.drop-bottom {
+        border-style: solid;
+        border-bottom-width: 10px;
+    }
+
+    &.drop-left {
+        border-style: solid;
+        border-left-width: 10px;
+    }
+
+    &.drop-right {
+        border-style: solid;
+        border-right-width: 10px;
+    }
 }
+
 
 
 body.open {
