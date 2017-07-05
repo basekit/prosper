@@ -37,7 +37,7 @@ a {
 // -----------------------------
 
 
-button,
+button:not(.pswp__button),
 .button {
     position: relative;
     z-index: 1;
@@ -55,9 +55,9 @@ button,
     }
 
     &:after {
-        content: '';    
+        content: '';
         position: absolute;
-        top: 0; 
+        top: 0;
         left: 0;
         right: 0;
         z-index: -1;
@@ -69,6 +69,7 @@ button,
         transition: opacity 0.45s;
         .gradient(@color__primary, lighten(@color__primary, 15%));
     }
+
     &:hover:after {
       opacity: 1;
     }

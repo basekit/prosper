@@ -56,8 +56,13 @@
 
 
 .imagewidget__figure {
-    display: inline-block;
+    display: inline;
     position: relative;
+}
+
+.imagewidget__image-link {
+    display: inline;
+    overflow: visible;
 }
 
 
@@ -107,23 +112,53 @@
     .flex-display;
     flex-direction: column;
     justify-content: flex-end;
-    width: 100%;
     min-height: 90px;
     margin: 0;
     padding: 10px 20px 14px;
     .gradient(transparent, #313131);
 }
+
 .gallery__caption-link {
     display: inline-block;
 }
+
 .image-title,
 .image-description {
     font-size: 12px;
     line-height: 22px;
     color: white;
 }
+
 .image-description {
     opacity: .7;
+}
+
+
+// Styles for responsive columns
+.responsivecolumns .columns-two-left,
+.responsivecolumns .columns-two-right {
+
+
+    .gallery-item {
+        width: 50%;
+        padding-bottom: 50%;
+    }
+ }
+
+
+.responsivecolumns .columns-three-left,
+.responsivecolumns .columns-three-middle,
+.responsivecolumns .columns-three-right,
+.responsivecolumns .columns-four-first,
+.responsivecolumns .columns-four-second,
+.responsivecolumns .columns-four-third,
+.responsivecolumns .columns-four-fourth {
+
+
+    .gallery-item {
+        width: 100%;
+        padding-bottom: 100%;
+    }
 }
 
 
