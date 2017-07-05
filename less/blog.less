@@ -87,7 +87,7 @@
         font-size: @font__button--font-size;
         font-weight: @font__button--font-weight;
         letter-spacing: @font__button--letter-spacing;
-        line-height: @font__button--line-height;
+        line-height: 38px;
 
         @media @mobile {
             font-size: 12px;
@@ -250,8 +250,13 @@
     position: relative;
     display: block;
     margin: 0;
-    padding: 25px 30px;
+    padding: 25px 30px 5px;
     text-align: center;
+}
+
+
+.post-image + .post-content {
+    padding: 25px 30px;
 }
 
 
@@ -343,14 +348,23 @@
 
 
 // Post Footer
-.blogpostlist__post-footer {
-    padding: 10px 30px 8px;
-    background-color: transparent;
-    position: absolute;
-    top: 175px;
-    left: 0;
-    right: 0;
-    text-align: center;
+.blogpostlist {
+
+    &__post-image + .post-content + .post-footer {
+        padding: 10px 30px 8px;
+        background-color: transparent;
+        position: absolute;
+        top: 175px;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+
+    &__timestamp {
+        color: white;
+        opacity: .7;
+    }
 }
 
 
