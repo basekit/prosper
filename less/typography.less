@@ -16,6 +16,32 @@ h1, h2, h3, h4, p {
 }
 
 
+// Blockquotes
+blockquote {
+    color: @color__p--text;
+    margin: 15px auto 0;
+    max-width: 800px;
+    padding: 40px 25px 5px;
+    position: relative;
+    text-align: center!important;
+
+    &:before {
+        color: @color__h2--text;
+        font-family: georgia;
+        font-size: 92px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: 20px;
+        z-index: 2;
+
+        @media @mobile {
+            font-size: 86px;
+        }
+    }
+}
+
 
 
 // #Global Link
@@ -36,8 +62,6 @@ a {
 // #Buttons
 // -----------------------------
 
-
-button,
 .button {
     position: relative;
     z-index: 1;
@@ -87,4 +111,29 @@ button,
 // Dropbox
 .dropbox__label {
     margin-left: 16px;
+}
+
+.file-name__label {
+    word-break: break-word;
+}
+
+
+// Click to call
+.clicktocall {
+
+    a {
+
+        @media @mobile {
+            display: block;
+        }
+    }
+
+    span {
+        @media @mobile {
+            color: @color__button--text;
+            font-size: @font__button--font-size;
+            font-weight: @font__button--font-weight;
+            line-height: @font__button--line-height;
+        }
+    }
 }

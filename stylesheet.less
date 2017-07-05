@@ -24,6 +24,8 @@
 @import "@{templateLocal}/less/blog-post.less";
 @import "@{templateLocal}/less/widgets.less";
 @import "@{templateLocal}/less/slideshow.less";
+@import "@{templateLocal}/less/ecom-list.less";
+@import "@{templateLocal}/less/ecom-basket.less";
 
 
 
@@ -47,6 +49,10 @@
 // Widget Spacing
 .widget--zone-widget {
     margin-bottom: 40px;
+}
+
+.droppable-highlight {
+    z-index: 10006;
 }
 
 
@@ -122,6 +128,8 @@ body.open {
 
 .template-header {
     position: absolute;
+    left: 0;
+    right: 0;
     top: 0;
     z-index: 10004;
     width: 100%;
