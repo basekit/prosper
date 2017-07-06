@@ -231,10 +231,18 @@
     padding: 0;
     position: relative;
     height: 20px;
+    text-indent: -9999px;
     width: 20px;
 
     &:before {
         color: @color__p--text;
+        position: absolute;
+        left: 0;
+        width: 20px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        text-indent: 0;
     }
 }
 

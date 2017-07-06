@@ -193,8 +193,7 @@
             "color__feature-button--background" : "#fff"
         },
         "form": {
-            "color__form-legend--text" : "#fff",
-            "color__form-legend--background": "@color__primary",
+            "color__form-legend--text" : "@color__h2--text",
             "color__form-label--text": "#3a3434"
         },
         "button": {
@@ -209,9 +208,8 @@
             "font__button--letter-spacing" : "2px"
         },
         "gallery": {
-            "color__gallery-caption--background" : "#26292f",
             "color__gallery-title--text" : "#fff",
-            "color__gallery-description--text" : "#bebebe"
+            "color__gallery-description--text" : "rgba(255,255,255, 0.7)"
         },
         "slideshow": {
             "color__slideshow-caption--background": "#26292f",
@@ -220,23 +218,6 @@
         },
         "socialicons": {
             "color__socialicons--icon": "#828282"
-        },
-        "menu": {
-            "color__menusections--background" : "@color__secondary",
-            "color__menu--background" : "fade(@color__secondary, 3%)",
-            "color__menu-section-header--background" : "@color__secondary",
-            "color__menu-section-featured--background" : "@color__secondary"
-        },
-        "blog": {
-            "color__blogpost-article--background" : "#fff",
-            "color__blogsearch-legend--text" : "@color__form-legend--text",
-            "color__blogpost-title--background" : "@color__secondary",
-            "color__blogpost-title--text" : "white"
-        },
-        "ecommerce": {
-            "color__ecomproductslist-product-title--text" : "@color__p--text",
-            "color__ecomproduct-title--text" : "@color__h2--text",
-            "color__ecomproduct-price--text" : "@color__p--text"
         }
     }
 }
