@@ -74,21 +74,23 @@
         min-height: 520px;
     }
 
-    background-color: @color__body--background;
-    content: "";
-    position: absolute;
-    z-index: 1;
-    bottom: -80px;
-    left: -5%;
-    right: 0;
-    border-radius: 100%;
-    width: 110%;
-    height: 125px;
+    &:after {
+        background-color: @color__body--background;
+        content: "";
+        position: absolute;
+        z-index: 1;
+        bottom: -80px;
+        left: -5%;
+        right: 0;
+        border-radius: 100%;
+        width: 110%;
+        height: 125px;
 
-    @media @mobile {
-        border-radius: 25%;
-        bottom: -40px;
-        height: 80px;
+        @media @mobile {
+            border-radius: 25%;
+            bottom: -40px;
+            height: 80px;
+        }
     }
 }
 
