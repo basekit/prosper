@@ -187,7 +187,7 @@
     float: left;
     width: 33.333%;
     padding: 0 10px;
-    margin-bottom: 40px;
+    margin-bottom: 0;
 
     @media @tablet {
         width: 100%;
@@ -196,6 +196,14 @@
     @media @mobile {
         width: 100%;
         margin-bottom: 20px;
+    }
+
+    &:nth-child(n+4) {
+        margin-top: 25px;
+
+        @media @tablet {
+            margin-top: 0;
+        }
     }
 
     &:last-child {
@@ -322,7 +330,7 @@
 // ------------------------------
 
 hr.rule {
-    background-color: @color__p--text;
+    background-color: fade(@color__p--text, 0.5);
 }
 
 
