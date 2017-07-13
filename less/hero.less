@@ -10,6 +10,25 @@
     z-index: 10000;
 }
 
+
+.template-header,
+[data-widget-type="feature"].bk-tpl-hidden + .template-header {
+    background-color: @color__feature-content--background;
+    position: relative;
+}
+
+[data-widget-type="feature"] +.template-header,
+.hero--default > .template-header {
+    background-color: transparent;
+    position: absolute;
+}
+
+
+[data-widget-type="feature"].bk-tpl-hidden + .template-header + .main-content > .container {
+    margin-top: 0;
+}
+
+
 // Background
 .feature__background-image,
 .post-items .post-article:first-child,
