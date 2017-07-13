@@ -6,8 +6,14 @@
 // #Hero: Home
 // -----------------------------
 
-.hero--home .widget-overlay {
+[data-widget-type="feature"] {
     z-index: 10000;
+
+    .widget__list {
+        position: absolute;
+        bottom: 100px;
+        top: initial;
+    }
 }
 
 
