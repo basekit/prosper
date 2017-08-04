@@ -1,20 +1,19 @@
 {
-    "name":"Sunset",
+    "name":"Prosper",
     "widgetVersion": 2,
     "thumbnail":"sunset.png",
     "pageTypes": [ "home" ],
     "screenshot":"sunset-screenshot.jpg",
      "images":[
-        "images/image-1.jpg",
-        "images/image-2.jpg",
-        "images/image-3.jpg",
-        "images/image-4.jpg",
-        "images/image-5.jpg",
-        "images/image-6.jpg",
-        "images/image-7.jpg",
-        "images/image-8.jpg",
-        "images/image-9.jpg",
-        "images/image-10.jpg"
+        "images/sale-image-1.jpg",
+        "images/sale-image-2.jpg",
+        "images/sale-image-3.jpg",
+        "images/sale-image-4.jpg",
+        "images/sale-image-5.jpg",
+        "images/sale-image-6.jpg",
+        "images/sale-image-7.jpg",
+        "images/sale-image-8.jpg",
+        "images/sale-image-9.jpg"
 
     ],
     "colorSwatches":
@@ -23,14 +22,14 @@
             "color1":"#ffffff",
             "color2":"#FBE6A1",
             "color3":"#494949",
-            "color4":"#424D51",
+            "color4":"#000000",
             "color5":"#424D51",
             "color6":"#ffffff",
             "color7":"#9AA7B5"
         }
     },
     "fontSwatch": {
-       "title": "Karla / Merriweather",
+       "title": "Noto Sans",
         "font1": {
             "font-family": "\"Noto Sans\", sans-serif",
             "font-size": "32px",
@@ -119,11 +118,11 @@
     },
     "styles": {
         "colors": {
-            "color__primary": "#C72E23",
+            "color__primary": "#facac0",
             "color__secondary": "#f5f6f7"
         },
         "site": {
-            "color__body--background": "#F7F5F2",
+            "color__body--background": "#f9e2df",
             "color__container--background": "#fff",
             "color__link--text": "@color__primary",
             "font__companyname--font-family": "@font-swatch10-font-family",
@@ -131,7 +130,7 @@
             "font__companyname--font-weight": "400",
             "font__companyname--line-height": "30px",
             "font__companyname--letter-spacing": "2px",
-            "color__companyname--text": "#fff"
+            "color__companyname--text": "#000"
         },
         "footer": {
             "color__footer--background": "#ffffff"
@@ -174,7 +173,7 @@
             "font__navigation--font-weight": "400",
             "font__navigation--line-height": "34px",
             "font__navigation--letter-spacing": "inherit",
-            "color__navigation--text": "#ffffff",
+            "color__navigation--text": "#000",
             "color__navigation--text--hover": "#ffffff"
         },
         "feature": {
@@ -183,25 +182,25 @@
             "font__feature-headline--font-size" : "56px",
             "font__feature-headline--font-weight" : "400",
             "font__feature-headline--line-height" : "62px",
-            "color__feature-headline--text" : "#fff",
+            "color__feature-headline--text" : "#000",
             "font__feature-headline--letter-spacing": "inherit",
             "font__feature-strapline--font-family" : "@font-swatch9-font-family",
             "font__feature-strapline--font-size" : "22px",
             "font__feature-strapline--font-weight" : "400",
             "font__feature-strapline--line-height" : "34px",
             "font__feature-strapline--letter-spacing" : "1px",
-            "color__feature-strapline--text" : "#ffffff",
-            "color__feature-button--text" : "@color__h1--text",
-            "color__feature-button--background" : "#fff"
+            "color__feature-strapline--text" : "#000",
+            "color__feature-button--text" : "#ffffff",
+            "color__feature-button--background" : "#000"
         },
         "form": {
             "color__form-legend--text" : "@color__h2--text",
             "color__form-label--text": "#3a3434"
         },
         "button": {
-            "color__button--background" : "@color__primary",
+            "color__button--background" : "#000",
             "color__button--text" : "#ffffff",
-            "color__button--background--hover": "darken(@color__button--background, 4%)",
+            "color__button--background--hover": "lighten(@color__button--background, 15%)",
             "color__button--text--hover" : "@color__button--text",
             "font__button--font-family" : "@font-swatch7-font-family",
             "font__button--font-size" : "13px",

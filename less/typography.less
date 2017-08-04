@@ -69,7 +69,6 @@ a {
     padding: 6px 20px;
     border-radius: 4px;
     text-transform: uppercase;
-    .gradient(lighten(@color__button--background, 15%), @color__button--background);
     border: 1px solid lighten(@color__button--background, 15%);
     overflow: hidden;
     text-align: center;
@@ -91,11 +90,21 @@ a {
         margin: 0;
         opacity: 0;
         transition: opacity 0.45s;
-        .gradient(@color__button--background, lighten(@color__button--background, 15%));
     }
 
     &:hover:after {
       opacity: 1;
+    }
+
+    &:hover {
+        background-color: @color__button--background--hover;
+    }
+}
+
+.blogpostlist__read-more,
+.feature__button {
+    &:hover {
+        background-color: @color__button--background--hover;
     }
 }
 
