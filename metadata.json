@@ -174,7 +174,7 @@
             "font__navigation--line-height": "34px",
             "font__navigation--letter-spacing": "inherit",
             "color__navigation--text": "#000",
-            "color__navigation--text--hover": "#ffffff"
+            "color__navigation--text--hover": "#000"
         },
         "feature": {
             "color__feature-content--background": "@color__primary",
