@@ -1,2 +1,3 @@
-# sunset
-BaseKit / Amazon.jp Sunset Template
+# Success
+
+BaseKit / Amazon.jp Template

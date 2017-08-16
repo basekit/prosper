@@ -1,9 +1,9 @@
 {
-    "name":"Prosper",
+    "name":"Success",
     "widgetVersion": 2,
-    "thumbnail":"sunset.png",
+    "thumbnail":"success-screenshot.jpg",
     "pageTypes": [ "home" ],
-    "screenshot":"sunset-screenshot.jpg",
+    "screenshot":"success-screenshot-high.jpg",
      "images":[
         "images/sale-image-1.jpg",
         "images/sale-image-2.jpg",
