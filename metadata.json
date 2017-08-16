@@ -1,9 +1,9 @@
 {
     "name":"Success",
     "widgetVersion": 2,
-    "thumbnail":"success-screenshot.jpg",
+    "thumbnail":"thumbnail.png",
     "pageTypes": [ "home" ],
-    "screenshot":"success-screenshot-high.jpg",
+    "screenshot":"success-screenshot.jpg",
      "images":[
         "images/sale-image-1.jpg",
         "images/sale-image-2.jpg",
